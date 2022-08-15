@@ -1,0 +1,30 @@
+[
+  {
+    "tipo": "Camiseta",
+    "tecido": "Algodao",
+    "descricao": "Cor: Preto, Estampa: Web-Developer, Manga: Curta",
+    "foto": "https://i.pinimg.com/736x/32/d0/9e/32d09e59aac26b77b0a74928d779d6db.jpg",
+    "preco": 20.0
+  },
+  {
+    "tipo": "Calça Moletom",
+    "tecido": "Algodao",
+    "descricao": "Cor: Preto, Corte: Skynni",
+    "foto": "https://decathlonpro.vteximg.com.br/arquivos/ids/2560300/trousers-100-regular-gym-m-gg-preto-g1.jpg?v=637263606367300000",
+    "preco": 30.0
+  },
+  {
+    "tipo": "Moletom",
+    "tecido": "Algodao",
+    "descricao": "Cor: Preto, Estampa: Git-Command, Manga: Longa, Capuz: Sim",
+    "foto": "https://ae01.alicdn.com/kf/Hab7622063fe749999a026f1af3dc79192/Moletom-com-capuz-de-l-para-escolher-sua-arma-c-c-engra-ado-programador-desenvolvedor-roupas.jpg",
+    "preco": 50.0
+  },
+  {
+    "tipo": "Meia",
+    "tecido": "Algodao",
+    "descricao": "Cor: Preto + Azul, Corte: Cano-Alto, Estampa: #TheDevConf",
+    "foto": "https://cdn.awsli.com.br/600x450/1551/1551422/produto/57669043/2afa7552da.jpg",
+    "preco": 10.0
+  }
+]
