@@ -13,8 +13,8 @@ app.use(cors());
 app.use(cors());
 app.use(express.json());
 app.use('/clothes', routes);
-app.get("/", (req, res) => {
-  res.send({ message: "Hello, world!" });
+app.get('/', (req, res) => {
+  res.send({ message: 'Hello, world!' });
 });
 
 app.listen(port, () => {
