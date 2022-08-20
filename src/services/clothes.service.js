@@ -1,4 +1,4 @@
-const Clothes = require('../models/Clothes');
+const Clothes = require('../models/clothes');
 
 const findClothesService = async () => {
   const clothes = await Clothes.find();
