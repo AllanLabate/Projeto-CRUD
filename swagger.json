@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API CodeWear",
+    "description": "API para projeto CRUD",
+    "termsOfService": "",
+    "contact": {
+      "email": "allan.labate1@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/clothes",
+      "description": "API DE TESTE"
+    },
+    {
+      "url": "https://crud-codewear.herokuapp.com/clothes/all-clothes",
+      "description": "API DE PRODUÇAO"
+    }
+  ],
+  "paths": {
+    "/all-paletas": {
+      "get": {
+        "sumary": "List of all clothes",
+        "description": "This rout is responsible to show all clothes registered",
+        "tags": ["clothes"],
+        "responses": {
+          "404": {
+            "description": "not found"
+          },
+          "200": {
+            "description": "ok",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Clothes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "shemas": {
+      "Clothes": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string"
+          },
+          "tecido": {
+            "type": "string"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "foto": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

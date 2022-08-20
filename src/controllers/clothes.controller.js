@@ -17,7 +17,7 @@ const findClothesByIdController = async (req, res) => {
   const chosenClothes = await clothesService.findClothesByIdService(idParam);
 
   if (!chosenClothes) {
-    return res.status(404).send({ message: 'Paleta não encontrada!' });
+    return res.status(404).send({ message: 'Clotes not found!' });
   }
 
   res.send(chosenClothes);
@@ -36,7 +36,7 @@ const createClothesController = async (req, res) => {
   ) {
     return res.status(400).send({
       message:
-        'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
+        'Você não preencheu todos os dados para adicionar uma nova vestimenta ao catalogo!',
     });
   }
 
@@ -57,7 +57,7 @@ const updateClothesController = async (req, res) => {
   const chosenClothes = await clothesService.findClothesByIdService(idParam);
 
   if (!chosenClothes) {
-    return res.status(404).send({ message: 'Paleta não encontrada!' });
+    return res.status(404).send({ message: 'vestimenta nao encontrada!' });
   }
 
   if (
@@ -69,7 +69,7 @@ const updateClothesController = async (req, res) => {
     !clothes.preco
   ) {
     return res.status(400).send({
-      message: 'Você não preencheu todos os dados para editar a paleta!',
+      message: 'Você não preencheu todos os dados para editar sua vestimenta!',
     });
   }
 
@@ -92,12 +92,12 @@ const deleteClothesController = async (req, res) => {
   const chosenClothes = await clothesService.findClothesByIdService(idParam);
 
   if (!chosenClothes) {
-    return res.status(404).send({ message: 'Paleta não encontrada!' });
+    return res.status(404).send({ message: 'vestimenta nao encontrada!' });
   }
 
   await clothesService.deleteClothesService(idParam);
 
-  res.send({ message: 'Paleta deletada com sucesso!' });
+  res.send({ message: 'vestimenta deletada do catalogo com sucesso!' });
 };
 
 module.exports = {
