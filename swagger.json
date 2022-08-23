@@ -20,9 +20,9 @@
     }
   ],
   "paths": {
-    "/all-paletas": {
+    "/all-clothes": {
       "get": {
-        "sumary": "List of all clothes",
+        "summary": "List of all clothes",
         "description": "This rout is responsible to show all clothes registered",
         "tags": ["clothes"],
         "responses": {
@@ -44,10 +44,158 @@
           }
         }
       }
+    },
+    "/one-clothes/{id}": {
+      "get": {
+        "summary": "search clothes by ID",
+        "description": "This route is responsible to search clothes by ID",
+        "tags": ["clothes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "clothes id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/clothes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-clothes": {
+      "post": {
+        "summary": "Create new clothes",
+        "description": "This route is responsible to create a new clothes",
+        "tags": ["clothes"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/clothes"
+              },
+              "examples": {
+                "clothes": {
+                  "value": {
+                    "tipo": "T-shirt",
+                    "tecido": "Cottom",
+                    "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+                    "foto": "Image",
+                    "preco": 4
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/clothes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-clothes/{id}": {
+      "put": {
+        "summary": "Edit Clothes by ID",
+        "description": "This route is responsible to update/edit clothes bt ID",
+        "tags": ["clothes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id clothes to search",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/clothes"
+              },
+              "examples": {
+                "clothes": {
+                  "value": {
+                    "tipo": "boots",
+                    "tecido": "leather",
+                    "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+                    "foto": "imagem",
+                    "preco": 7
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/clothes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-clothes/{id}": {
+      "delete": {
+        "summary": "Delete clothes",
+        "description": "This route is responsible to delete clothes by ID",
+        "tags": ["clothes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "clothes ID by delete",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
-    "shemas": {
+    "schemas": {
       "Clothes": {
         "type": "object",
         "properties": {
