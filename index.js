@@ -10,10 +10,10 @@ const app = express();
 
 connectToDatabase();
 app.use(cors());
+app.use(express.json());
+
 
 app.use("/users", userRoute);
-
-app.use(express.json());
 app.use('/clothes', routes);
 
 app.listen(port, () => {
